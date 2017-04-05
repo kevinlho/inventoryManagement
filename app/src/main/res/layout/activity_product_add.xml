@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.kevin.inventorymanagement.productAdd"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Tambah Produk"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:text="@string/productType"/>
+        <Spinner
+            android:id="@+id/productAdd_productType"
+            android:layout_width="200dp"
+            android:layout_height="50dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:text="@string/productBahan"/>
+        <Spinner
+            android:id="@+id/productAdd_productBahan"
+            android:layout_width="200dp"
+            android:layout_height="50dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:text="@string/productQuantity"/>
+        <EditText
+            android:id="@+id/productAdd_productQuantity_S"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/productAdd_productQuantity_M"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/productAdd_productQuantity_L"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/productAdd_productQuantity_XL"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/productAdd_productQuantity_XXL"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:text="@string/productCode"/>
+        <EditText
+            android:id="@+id/productAdd_productCode"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:text="@string/productName"/>
+        <EditText
+            android:id="@+id/productAdd_productName"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="20dp">
+        <Button
+            android:id="@+id/productAdd_addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tambah"/>
+        <Button
+            android:id="@+id/productAdd_editButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"/>
+    </LinearLayout>
+
+</LinearLayout>

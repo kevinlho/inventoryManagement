@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">inventoryManagement</string>
+    <string name="productCode">Kode Produk</string>
+    <string name="productQuantity">Quantity Produk</string>
+    <string name="productName">Nama Produk</string>
+    <string name="productType">Jenis Produk</string>
+    <string name="productBahan">Bahan Produk</string>
+
+    <string-array name="spinner_Bahan">
+        <item>@string/bahanDolby</item>
+        <item>@string/bahanKatun</item>
+        <item>@string/bahanViscose</item>
+        <item>@string/bahanTenun</item>
+        <item>@string/bahanSutra</item>
+    </string-array>
+    <string name="bahanDolby">Dolby</string>
+    <string name="bahanKatun">Katun</string>
+    <string name="bahanViscose">Viscose</string>
+    <string name="bahanTenun">Tenun</string>
+    <string name="bahanSutra">Sutra</string>
+
+    <string-array name="spinner_TipeBaju">
+        <item>@string/lenganPanjang</item>
+        <item>@string/lenganPendek</item>
+    </string-array>
+    <string name="lenganPanjang">Lengan Panjang</string>
+    <string name="lenganPendek">Lengan Pendek</string>
+</resources>
