@@ -31,7 +31,6 @@ public class productAdd extends AppCompatActivity {
 
         productCode = (EditText)findViewById(R.id.productAdd_productCode);
         productName = (EditText)findViewById(R.id.productAdd_productName);
-        productQuantity = (EditText)findViewById(R.id.productAdd_productQuantity);
 
         productType = (Spinner)findViewById(R.id.productAdd_productType);
         productBahan = (Spinner)findViewById(R.id.productAdd_productBahan);

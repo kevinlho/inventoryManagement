@@ -61,23 +61,33 @@
         <EditText
             android:id="@+id/productAdd_productQuantity_S"
             android:layout_width="50dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="S"
+            android:gravity="center"/>
         <EditText
             android:id="@+id/productAdd_productQuantity_M"
             android:layout_width="50dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="M"
+            android:gravity="center" />
         <EditText
             android:id="@+id/productAdd_productQuantity_L"
             android:layout_width="50dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="L"
+            android:gravity="center" />
         <EditText
             android:id="@+id/productAdd_productQuantity_XL"
             android:layout_width="50dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="XL"
+            android:gravity="center" />
         <EditText
             android:id="@+id/productAdd_productQuantity_XXL"
             android:layout_width="50dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="XXL"
+            android:gravity="center" />
     </LinearLayout>
 
     <LinearLayout
