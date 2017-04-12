@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">inventoryManagement</string>
+    <!--productAdd-->
     <string name="productCode">Kode Produk</string>
+    <string name="productPrice">Kode Harga</string>
     <string name="productQuantity">Quantity Produk</string>
     <string name="productName">Nama Produk</string>
     <string name="productType">Jenis Produk</string>
@@ -25,4 +27,10 @@
     </string-array>
     <string name="lenganPanjang">Lengan Panjang</string>
     <string name="lenganPendek">Lengan Pendek</string>
+
+    <!--global-->
+    <string name="loading">Loading…</string>
+    <string name="scan">Scan</string>
+    <string name="update">Update</string>
+
 </resources>

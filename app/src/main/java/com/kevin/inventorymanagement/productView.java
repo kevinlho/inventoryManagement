@@ -14,7 +14,7 @@ import com.kevin.inventorymanagement.Class.Batik;
 
 import java.util.ArrayList;
 
-public class Dashboard extends AppCompatActivity {
+public class productView extends AppCompatActivity {
 
     final public static String TAG = "xD : ";
     final private static DatabaseReference firebaseRoot = FirebaseDatabase.getInstance().getReference();
@@ -26,7 +26,7 @@ public class Dashboard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
+        setContentView(R.layout.activity_product_view);
 
         text = (TextView)findViewById(R.id.text);
     }

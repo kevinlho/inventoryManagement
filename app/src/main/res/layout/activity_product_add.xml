@@ -55,39 +55,54 @@
         android:orientation="horizontal"
         android:gravity="center">
         <TextView
-            android:layout_width="115dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:text="@string/productQuantity"/>
         <EditText
             android:id="@+id/productAdd_productQuantity_S"
-            android:layout_width="50dp"
+            android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:hint="S"
             android:gravity="center"/>
         <EditText
             android:id="@+id/productAdd_productQuantity_M"
-            android:layout_width="50dp"
+            android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:hint="M"
             android:gravity="center" />
         <EditText
             android:id="@+id/productAdd_productQuantity_L"
-            android:layout_width="50dp"
+            android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:hint="L"
             android:gravity="center" />
         <EditText
             android:id="@+id/productAdd_productQuantity_XL"
-            android:layout_width="50dp"
+            android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:hint="XL"
             android:gravity="center" />
         <EditText
             android:id="@+id/productAdd_productQuantity_XXL"
-            android:layout_width="50dp"
+            android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:hint="XXL"
             android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:text="@string/productPrice"/>
+        <EditText
+            android:id="@+id/productAdd_productPrice"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <LinearLayout
@@ -131,11 +146,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tambah"/>
-        <Button
-            android:id="@+id/productAdd_editButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Edit"/>
     </LinearLayout>
 
 </LinearLayout>
