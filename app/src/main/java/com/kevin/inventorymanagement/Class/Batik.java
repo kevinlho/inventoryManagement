@@ -13,6 +13,12 @@ public class Batik {
     private ArrayList<Long> quantityList;
 
     public Batik(){};
+    //constructor to get view only
+    public Batik (String code, String name){
+        this.code = code;
+        this.name = name;
+        this.quantityList = null;
+    }
     public Batik(String code, String name, ArrayList<Long> quantityList) {
         this.code = code;
         this.name = name;

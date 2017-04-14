@@ -2,6 +2,7 @@ package com.kevin.inventorymanagement;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
@@ -58,6 +59,7 @@ public class productAdd extends utilities implements View.OnClickListener{
         bahanAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.spinner_Bahan));
 
         findViewById(R.id.productAdd_addButton).setOnClickListener(this);
+        findViewById(R.id.productAdd_updateButton).setOnClickListener(this);
 
         productType.setAdapter(typeAdapter);
         productBahan.setAdapter(bahanAdapter);
@@ -86,39 +88,36 @@ public class productAdd extends utilities implements View.OnClickListener{
         Toast.makeText(this,"Produk telah di tambah",Toast.LENGTH_SHORT).show();
     }
 
-//    private void updateProduct(){
-//        final ArrayList<Long> updatedList = new ArrayList<Long>();
-//        updatedList.add(productQuantity_S.getText().toString());
-//        updatedList.add(productQuantity_M.getText().toString());
-//        updatedList.add(productQuantity_L.getText().toString());
-//        updatedList.add(productQuantity_XL.getText().toString());
-//        updatedList.add(productQuantity_XXL.getText().toString());
-//
-//        utilities.firebaseRoot.child("product/"
-//                +productBahan.getSelectedItem().toString().toLowerCase()+"/"
-//                +productType.getSelectedItem().toString().toLowerCase()+"/"
-//                +productPrice.getText().toString().toLowerCase()+"/"
-//                +productCode.getText().toString().toLowerCase()+"/").addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                for (DataSnapshot snapshot: dataSnapshot.getChildren()){
-//                    String val = String.valueOf(snapshot);
-//                    switch (val){
-//                        case "0":
-//                            if(updatedList.get(val)!=null){
-//
-//                            }
-//                            break;
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
-//    }
+    private void updateProduct(){
+        final ArrayList<Long> updatedList = new ArrayList<Long>();
+        updatedList.add(Long.parseLong(productQuantity_S.getText().toString()));
+        updatedList.add(Long.parseLong(productQuantity_M.getText().toString()));
+        updatedList.add(Long.parseLong(productQuantity_L.getText().toString()));
+        updatedList.add(Long.parseLong(productQuantity_XL.getText().toString()));
+        updatedList.add(Long.parseLong(productQuantity_XXL.getText().toString()));
+
+        utilities.firebaseRoot.child("product/"
+                +productBahan.getSelectedItem().toString().toLowerCase()+"/"
+                +productType.getSelectedItem().toString().toLowerCase()+"/"
+                +productPrice.getText().toString().toLowerCase()+"/"
+                +productCode.getText().toString().toLowerCase()+"/quantityList").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot: dataSnapshot.getChildren()){
+                    int getKey = Integer.parseInt(snapshot.getKey());
+                    Long getVal = snapshot.getValue(Long.class);
+                    long totalVal = getVal + updatedList.get(getKey);
+                    snapshot.getRef().setValue(totalVal);
+                    Toast.makeText(productAdd.this, "Produk berhasil di tambah!", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
 
     @Override
     public void onClick(View v) {
@@ -126,6 +125,9 @@ public class productAdd extends utilities implements View.OnClickListener{
         switch (i){
             case R.id.productAdd_addButton:
                 addProduct();
+                break;
+            case R.id.productAdd_updateButton:
+                updateProduct();
                 break;
             default:
                 break;

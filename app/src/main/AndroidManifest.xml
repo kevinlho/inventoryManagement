@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".dashboard">
+        <activity android:name=".productView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".productView" />
+        <activity android:name=".dashboard" />
         <activity android:name=".productAdd" />
         <activity android:name=".productDelete" />
     </application>

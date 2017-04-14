@@ -145,6 +145,11 @@
             android:id="@+id/productAdd_addButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Baru"/>
+        <Button
+            android:id="@+id/productAdd_updateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Tambah"/>
     </LinearLayout>
 
