@@ -28,8 +28,8 @@ public class productView extends AppCompatActivity implements View.OnClickListen
     TextView productName;
     TextView productQuantity;
     TextView productType;
+    TextView QRCode;
 
-    String getQuantity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +40,7 @@ public class productView extends AppCompatActivity implements View.OnClickListen
         productName = (TextView)findViewById(R.id.productView_productName);
         productQuantity = (TextView)findViewById(R.id.productView_productQuantity);
         productType = (TextView)findViewById(R.id.productView_productType);
+        QRCode = (TextView)findViewById(R.id.productView_qrCode);
 
         findViewById(R.id.productView_scanItem).setOnClickListener(this);
     }
@@ -81,7 +82,7 @@ public class productView extends AppCompatActivity implements View.OnClickListen
 
     public void scanBarcode(){
         IntentIntegrator scanInit = new IntentIntegrator(this);
-//        scanInit.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
+        scanInit.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
         scanInit.setPrompt("Scan");
         scanInit.setCameraId(0);
         scanInit.setBeepEnabled(false);
@@ -97,7 +98,8 @@ public class productView extends AppCompatActivity implements View.OnClickListen
             if(scanResult.getContents() == null) {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
             } else {
-                String[] result = scanResult.getContents().toLowerCase().split("/");
+                String[] result = scanResult.getContents().toLowerCase().split("_");
+                QRCode.setText(scanResult.getContents());
                 scanChecker(result);
             }
         } else {
@@ -118,6 +120,7 @@ public class productView extends AppCompatActivity implements View.OnClickListen
                 +harga+"/"
                 +code).
                 addListenerForSingleValueEvent(new ValueEventListener() {
+                    String getQuantity = "";
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         for (DataSnapshot snapshot: dataSnapshot.child("quantityList").getChildren()){

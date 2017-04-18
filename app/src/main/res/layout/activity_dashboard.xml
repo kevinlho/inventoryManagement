@@ -13,14 +13,19 @@
         android:orientation="vertical">
         <Button
             android:id="@+id/dashboard_button_addProduct"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Tambah Produk"/>
         <Button
             android:id="@+id/dashboard_button_sellProduct"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Potong Produk"/>
+        <Button
+            android:id="@+id/dashboard_button_checkProduct"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Cek Produk"/>
     </LinearLayout>
 
 </LinearLayout>

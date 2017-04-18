@@ -45,7 +45,7 @@ public class productDelete extends AppCompatActivity implements View.OnClickList
             if(scanResult.getContents() == null) {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
             } else {
-                String[] result = scanResult.getContents().toLowerCase().split("/");
+                String[] result = scanResult.getContents().toLowerCase().split("_");
                 scanChecker(result);
             }
         } else {
@@ -55,7 +55,7 @@ public class productDelete extends AppCompatActivity implements View.OnClickList
 
     public void scanBarcode(){
         IntentIntegrator scanInit = new IntentIntegrator(this);
-//        scanInit.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
+        scanInit.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
         scanInit.setPrompt("Scan");
         scanInit.setCameraId(0);
         scanInit.setBeepEnabled(false);
@@ -90,7 +90,7 @@ public class productDelete extends AppCompatActivity implements View.OnClickList
                     }
                 });
 
-        Toast.makeText(this, "Produk Terjual: "+code+" | "+result[3], Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Produk Terjual: "+code+" | "+result[3].toUpperCase(), Toast.LENGTH_LONG).show();
 
     }
     

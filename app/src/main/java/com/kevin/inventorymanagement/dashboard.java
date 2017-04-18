@@ -12,6 +12,7 @@ public class dashboard extends AppCompatActivity implements View.OnClickListener
         setContentView(R.layout.activity_dashboard);
         findViewById(R.id.dashboard_button_addProduct).setOnClickListener(this);
         findViewById(R.id.dashboard_button_sellProduct).setOnClickListener(this);
+        findViewById(R.id.dashboard_button_checkProduct).setOnClickListener(this);
     }
 
 
@@ -24,6 +25,9 @@ public class dashboard extends AppCompatActivity implements View.OnClickListener
                 break;
             case R.id.dashboard_button_sellProduct:
                 utilities.goTo(this,productDelete.class);
+                break;
+            case R.id.dashboard_button_checkProduct:
+                utilities.goTo(this,productView.class);
                 break;
             default:
                 break;
