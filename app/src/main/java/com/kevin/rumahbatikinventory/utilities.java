@@ -1,4 +1,4 @@
-package com.kevin.inventorymanagement;
+package com.kevin.rumahbatikinventory;
 
 import android.app.ProgressDialog;
 import android.content.Context;

@@ -1,9 +1,8 @@
-package com.kevin.inventorymanagement;
+package com.kevin.rumahbatikinventory.product;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,11 +14,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
-import com.kevin.inventorymanagement.Class.Batik;
+import com.kevin.rumahbatikinventory.Class.Batik;
+import com.kevin.rumahbatikinventory.R;
+import com.kevin.rumahbatikinventory.utilities;
 
-import java.util.ArrayList;
-
-public class productView extends AppCompatActivity implements View.OnClickListener{
+public class productScan extends AppCompatActivity implements View.OnClickListener{
 
     final private static DatabaseReference firebaseRoot = FirebaseDatabase.getInstance().getReference();
 
@@ -33,7 +32,7 @@ public class productView extends AppCompatActivity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_product_view);
+        setContentView(R.layout.activity_product_scan);
 
         productBahan = (TextView)findViewById(R.id.productView_productBahan);
         productCode = (TextView)findViewById(R.id.productView_productCode);

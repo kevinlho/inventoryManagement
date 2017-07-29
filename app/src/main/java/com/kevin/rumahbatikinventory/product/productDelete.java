@@ -1,20 +1,20 @@
-package com.kevin.inventorymanagement;
+package com.kevin.rumahbatikinventory.product;
 
-import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.kevin.rumahbatikinventory.R;
+import com.kevin.rumahbatikinventory.utilities;
 
 public class productDelete extends AppCompatActivity implements View.OnClickListener{
 
@@ -65,33 +65,49 @@ public class productDelete extends AppCompatActivity implements View.OnClickList
 
     public void scanChecker(String[] result){
 //        String Tipe = result[0]; (Cewe/Cowo)
-        String code = result[1]; //(kode KA-RUH-1
-        String bahan = bahanChecker(result[1].substring(0,1)); // bahan KA/KB/DA/DB
-        String lengan = lenganChecker(result[1].substring(1,2));
-        String harga = result[2]; // kode harga UHK/RUH
-        String size = sizeChecker(result[3]); // size S,M,L,XL,XXL
+        final String code = result[1]; //(kode KA-RUH-1
+        final String bahan = bahanChecker(result[1].substring(0,1)); // bahan KA/KB/DA/DB
+        final String lengan = lenganChecker(result[1].substring(1,2));
+        final String harga = result[2]; // kode harga UHK/RUH
+        final String size = sizeChecker(result[3]); // size S,M,L,XL,XXL
 
-        utilities.firebaseRoot.child("product/"
-                +bahan+"/"
-                +lengan+"/"
-                +harga+"/"
-                +code+"/"
-                +"quantityList/"
-                +size).
-                addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        dataSnapshot.getRef().setValue(dataSnapshot.getValue(Long.class)-1);
-                    }
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete Product");
+        builder.setMessage("Delete Product : "+ code);
+        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //yes
+                utilities.firebaseRoot.child("product/"
+                        +bahan+"/"
+                        +lengan+"/"
+                        +harga+"/"
+                        +code+"/"
+                        +"quantityList/"
+                        +size).
+                        addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                dataSnapshot.getRef().setValue(dataSnapshot.getValue(Long.class)-1);
+                            }
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
 
-                    }
-                });
+                            }
+                        });
 
-        Toast.makeText(this, "Produk Terjual: "+code+" | "+result[3].toUpperCase(), Toast.LENGTH_LONG).show();
+                Toast.makeText(productDelete.this, "Produk Terjual: "+code.toString()+" | "+ size.toString(), Toast.LENGTH_LONG).show();
 
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //no
+            }
+        });
+        builder.show();
     }
     
     private String bahanChecker(String bahan){

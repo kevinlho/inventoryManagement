@@ -1,6 +1,5 @@
-package com.kevin.inventorymanagement.Class;
+package com.kevin.rumahbatikinventory.Class;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**

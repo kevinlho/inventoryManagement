@@ -1,4 +1,4 @@
-package com.kevin.inventorymanagement;
+package com.kevin.rumahbatikinventory;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

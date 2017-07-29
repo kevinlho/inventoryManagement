@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.kevin.inventorymanagement.dashboard">
+    tools:context="com.kevin.rumahbatikinventory.dashboard">
 
     <LinearLayout
         android:gravity="center"
@@ -26,6 +26,11 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Cek Produk"/>
+        <Button
+            android:id="@+id/dashboard_button_viewProduct"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Lihat Produk"/>
     </LinearLayout>
 
 </LinearLayout>

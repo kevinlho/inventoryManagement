@@ -1,5 +1,11 @@
 <resources>
-    <string name="app_name">inventoryManagement</string>
+    <string name="app_name">RumahBatikInventory</string>
+    <string name="codeToko">Toko:</string>
+
+    <!--callback-->
+    <string name="DATA_NOT_FOUND">Data Not Found</string>
+
+
     <!--productAdd-->
     <string name="productCode">Kode Produk</string>
     <string name="productPrice">Kode Harga</string>
@@ -28,9 +34,17 @@
     <string name="lenganPanjang">Lengan Panjang</string>
     <string name="lenganPendek">Lengan Pendek</string>
 
+    <string-array name="spinner_KodeBaju">
+        <item>@string/ruh</item>
+        <item>@string/uhk</item>
+        <item>@string/bkk</item>
+    </string-array>
+    <string name="ruh">RUH</string>
+    <string name="uhk">UHK</string>
+    <string name="bkk">BKK</string>
+
     <!--global-->
     <string name="loading">Loading…</string>
     <string name="scan">Scan</string>
-    <string name="update">Update</string>
 
 </resources>

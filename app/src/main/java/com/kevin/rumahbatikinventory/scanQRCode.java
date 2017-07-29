@@ -1,4 +1,4 @@
-package com.kevin.inventorymanagement;
+package com.kevin.rumahbatikinventory;
 
 import android.support.v7.app.AppCompatActivity;
 
@@ -11,7 +11,7 @@ import com.google.zxing.integration.android.IntentIntegrator;
 public class scanQRCode extends AppCompatActivity{
     public void scanBarcode(){
         IntentIntegrator scanInit = new IntentIntegrator(this);
-//        scanInit.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
+        scanInit.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
         scanInit.setPrompt("Scan");
         scanInit.setCameraId(0);
         scanInit.setBeepEnabled(false);
