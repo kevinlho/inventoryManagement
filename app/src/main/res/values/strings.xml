@@ -43,6 +43,18 @@
     <string name="uhk">UHK</string>
     <string name="bkk">BKK</string>
 
+    <!--sales view-->
+    <string-array name="spinner_Toko">
+        <item>Dalem</item>
+        <item>Jembatan</item>
+        <item>Atas</item>
+        <item>Bawah</item>
+    </string-array>
+    <string name="dalem">Dalem</string>
+    <string name="jembatan">Jembatan</string>
+    <string name="atas">Atas</string>
+    <string name="bawah">Bawah</string>
+
     <!--global-->
     <string name="loading">Loading…</string>
     <string name="scan">Scan</string>

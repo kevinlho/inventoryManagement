@@ -20,7 +20,7 @@
         <activity android:name=".product.productAdd" />
         <activity android:name=".product.productDelete" />
         <activity android:name=".product.productView" />
-        <activity android:name=".sales.salesAdd"></activity>
+        <activity android:name=".sales.salesView"></activity>
     </application>
 
 </manifest>
